@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Doctor Dashboard</h2>
+    <p>Welcome, Dr. {{ username }}!</p>
+
+    <a href="/doctor_view_appointments" class="button">View Appointments</a>
+    <a href="/logout" class="button">Logout</a>
+
+    <h3>All Patients</h3>
+    <ul>
+        {% for patient in patients %}
+            <li>
+                {{ patient.username }} —
+                <a href="/add_diagnosis/{{ patient.username }}" class="button">Add Diagnosis</a>
+                <a href="/view_patient_history/{{ patient.username }}" class="button">View History</a>
+                <a href="/view_reports/{{ patient.username }}" class="button">View Reports</a>
+            </li>
+        {% else %}
+            <li>No patients found.</li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

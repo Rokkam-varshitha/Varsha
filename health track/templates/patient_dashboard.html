@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Welcome, {{ username }}!</h2>
+
+    <a href="/add_medicine" class="button">Add Medicine</a>
+    <a href="/book_appointment" class="button">Book Appointment</a>
+    <a href="/upload_report" class="button">Upload Report</a>
+    <a href="/logout" class="button">Logout</a>
+
+    <h3>Your Medicines</h3>
+    <ul>
+        {% for med in medicines %}
+        <li><strong>{{ med.name }}</strong> — {{ med.dosage }} at {{ med.time }}</li>
+        {% else %}
+        <li>No medicines added.</li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

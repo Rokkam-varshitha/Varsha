@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointments Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            border: 1px solid #555;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a.button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        h2, h3, p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Doctor Appointment Summary</h2>
+
+        <p>Total Appointments: {{ total }}</p>
+        <p>Completed Appointments: {{ completed }}</p>
+
+        <h3>Upcoming Appointments</h3>
+        {% if appointments %}
+            <table>
+                <tr>
+                    <th>Patient</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Reason</th>
+                    <th>Action</th>
+                </tr>
+                {% for appointment in appointments %}
+                    <tr>
+                        <td>{{ appointment[1] }}</td>
+                        <td>{{ appointment[2] }}</td>
+                        <td>{{ appointment[3] }}</td>
+                        <td>{{ appointment[4] }}</td>
+                        <td><a href="/solve/{{ appointment[0] }}" class="button">view & solve</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No upcoming appointments.</p>
+        {% endif %}
+
+        <a href="/doctor_dashboard" class="button">Back</a>
+    </div>
+</body>
+</html>

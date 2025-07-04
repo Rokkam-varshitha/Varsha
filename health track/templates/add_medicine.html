@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Medicine - MedTrack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Add Medicine</h2>
+    <form method="POST">
+        <label>Medicine Name:</label>
+        <input type="text" name="name" required><br>
+        <label>Dosage:</label>
+        <input type="text" name="dosage" required><br>
+        <label>Time:</label>
+        <input type="text" name="time" required><br>
+        <input type="submit" value="Add Medicine">
+    </form>
+    <a href="/patient_dashboard" class="button">Back</a>
+</div>
+</body>
+</html>

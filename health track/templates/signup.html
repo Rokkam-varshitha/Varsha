@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup - MedTrack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Signup</h2>
+        <form method="POST">
+            <label>Username:</label>
+            <input type="text" name="username" required>
+            <label>Password:</label>
+            <input type="password" name="password" required>
+
+    <label>Role:</label>
+    <select name="role" required>
+        <option value="patient">Patient</option>
+        <option value="doctor">Doctor</option>
+    </select>
+
+    <button type="submit">Sign Up</button>
+</form>
+        <br>
+        <a href="/login" class="button">Already have an account? Login</a>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Diagnoses</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Your Diagnoses</h2>
+    {% if diagnosis_list %}
+        <ul>
+        {% for diag in diagnosis_list %}
+            <li>
+                <strong>Doctor:</strong> {{ diag[0] }}<br>
+                <strong>Diagnosis:</strong> {{ diag[1] }}
+            </li><br>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No diagnoses available yet.</p>
+    {% endif %}
+    <a href="/patient_dashboard" class="button">Back</a>
+</div>
+</body>
+</html>

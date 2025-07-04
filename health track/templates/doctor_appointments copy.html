@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - MedTrack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Your Appointment Requests</h2>
+    <ul>
+        {% for appt in appointments %}
+        <li>
+            {{ appt.patient_username }} — {{ appt.date }} at {{ appt.time }} [{{ appt.status }}]
+            {% if appt.status == 'Pending' %}
+            <a href="/update_appointment/{{ appt.id }}/accept" class="button">Accept</a>
+            <a href="/update_appointment/{{ appt.id }}/reject" class="button">Reject</a>
+            {% endif %}
+        </li>
+        {% else %}
+        <li>No appointments found.</li>
+        {% endfor %}
+    </ul>
+    <a href="/doctor_dashboard" class="button">Back</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - MedTrack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Book Appointment</h2>
+    <form method="POST" action="/book_appointment">
+    <label>Doctor Username:</label>
+    <input type="text" name="doctor_username" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Phone Number:</label>
+    <input type="text" name="phone_no" required>
+
+    <label>Date:</label>
+    <input type="date" name="date" required>
+
+    <label>Time:</label>
+    <input type="time" name="time" required>
+
+    <label>Reason:</label>
+    <textarea name="reason" required></textarea>
+
+    <button type="submit">Book Appointment</button>
+</form>
+
+    <a href="/patient_dashboard" class="button">Back</a>
+</div>
+</body>
+</html>

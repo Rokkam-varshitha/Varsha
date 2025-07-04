@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solve Appointment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        .container {
+            margin: auto;
+            padding: 30px;
+            width: 60%;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px gray;
+        }
+        textarea {
+            width: 80%;
+            height: 100px;
+        }
+        button {
+            padding: 10px 25px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Submit Diagnosis</h2>
+
+        <p><strong>Patient Username:</strong> {{ appointment[0] }}</p>
+        <p><strong>Doctor Username:</strong> {{ appointment[1] }}</p>
+        <p><strong>Date:</strong> {{ appointment[2] }}</p>
+        <p><strong>Time:</strong> {{ appointment[3] }}</p>
+        <p><strong>Reason:</strong> {{ appointment[4] }}</p>
+
+        <form method="POST">
+            <label><strong>Diagnosis:</strong></label><br>
+            <textarea name="diagnosis" required></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <br>
+        <a href="/doctor_view_appointments">Back to Appointments</a>
+    </div>
+</body>
+</html>
