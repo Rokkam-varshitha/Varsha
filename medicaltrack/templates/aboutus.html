@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - MedTrack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .header {
+            background-color: #00796b;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            color: #00796b;
+            margin-bottom: 10px;
+        }
+        .section p {
+            line-height: 1.7;
+        }
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+        .member {
+            flex: 1 1 200px;
+            background: #f1f1f1;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .member img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #00796b;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1><i class="fas fa-hospital-symbol"></i> About MedTrack</h1>
+</div>
+
+<div class="container">
+    <div class="section">
+        <h2>Who We Are</h2>
+        <p>MedTrack is a modern healthcare management system designed to simplify and streamline the way patients and doctors interact. Whether it's booking appointments, storing medical records, or tracking medications — we provide it all in one secure platform.</p>
+    </div>
+
+    <div class="section">
+        <h2>Our Mission</h2>
+        <p>To bridge the gap between healthcare providers and patients using technology. We aim to make healthcare more accessible, efficient, and secure for everyone.</p>
+    </div>
+
+    <div class="section">
+        <h2>Our Team</h2>
+        <div class="team">
+            <div class="member">
+                <img src="https://via.placeholder.com/100" alt="Founder">
+                <h4>Meena Kumari</h4>
+                <p>Founder & Lead Developer</p>
+            </div>
+            <div class="member">
+                <img src="https://via.placeholder.com/100" alt="Designer">
+                <h4>Varsha Rao</h4>
+                <p>UI/UX Designer</p>
+            </div>
+            <div class="member">
+                <img src="https://via.placeholder.com/100" alt="Engineer">
+                <h4>Chaitanya Patel</h4>
+                <p>Backend Engineer</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 MedTrack | Powered by HealthTech
+</footer>
+
+</body>
+</html>

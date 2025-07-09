@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Reports - MedTrack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <a href="{{ url_for('solve_appointment', appointment_id=latest_appointment_id) }}" class="button solve-btn">Solve Appointment</a>
+    <style>
+        .button {
+            padding: 8px 16px;
+            background: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            margin-right: 8px;
+        }
+        .button:hover { background: #217dbb; }
+        .solve-btn {
+            background: #27ae60;
+        }
+        .solve-btn:hover {
+            background: #1e8449;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Reports for {{ patient_username }}</h2>
+    <ul>
+        {% for report in reports %}
+        <li>
+            <a href="/uploads/{{ report.filename }}" target="_blank" class="button">{{ report.filename }}</a>
+            {% if report.appointment_id %}
+            <a href="{{ url_for('solve_appointment', appointment_id=report.appointment_id) }}" class="button solve-btn">Solve Appointment</a>
+            {% endif %}
+        </li>
+        {% else %}
+        <li>No reports uploaded.</li>
+        {% endfor %}
+    </ul>
+    <a href="/doctor_dashboard" class="button">Back</a>
+</div>
+</body>
+</html>

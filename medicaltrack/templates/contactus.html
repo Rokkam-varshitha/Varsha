@@ -1,0 +1,29 @@
+<!-- File: templates/contactus.html --><!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | MedTrack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">MedTrack</h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/aboutus">About Us</a></li>
+            <li><a href="/login">Login</a></li>
+        </ul>
+    </nav><section class="section">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need support, feel free to contact us!</p>
+        <div class="contact-info">
+            <p><strong>Email:</strong> support@medtrack.com</p>
+            <p><strong>Phone:</strong> +91 98765 43210</p>
+            <p><strong>Address:</strong> MedTrack HQ, Hyderabad, India</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html><!-- Add to static/style.css -->.contact-info p { font-size: 1.1em; margin: 8px 0; color: #333; }

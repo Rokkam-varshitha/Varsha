@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Report - MedTrack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Upload Report</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="report" required><br>
+        <input type="submit" value="Upload">
+    </form>
+    <a href="/patient_dashboard" class="button">Back</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Diagnosis</title>
+</head>
+<body>
+    <h2>Your Diagnoses</h2>
+    <ul>
+        {% for diag in diagnoses %}
+            <li>{{ diag.diagnosis_text }}</li>
+        {% else %}
+            <li>No diagnoses found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('patient_dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

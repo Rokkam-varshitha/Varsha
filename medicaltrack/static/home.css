@@ -1,0 +1,109 @@
+main{
+    height: 102px;
+}
+.head{
+
+height: 100px;
+
+float: left;
+}
+.head h1{
+
+color: blue;
+
+margin-left: 76px;
+
+margin-top: 33px;
+}
+.head i{
+
+margin-right: 12px;
+}
+
+.a{
+
+C: \Users\chait\OneDrive\Desktop\health track\home.html;
+
+display: flew;
+
+margin-left: 789px;
+
+margin-top: -49px;
+
+font-size: 19px;
+}
+.a i{}
+
+.bg{
+    background-image: url(2.jpg);
+    text-align: center;
+    text-align: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 654px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* static/css/home.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #56ccf2, #2f80ed);
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.header {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 3em;
+    margin: 0;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff10;
+    padding: 15px;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffd700;
+}
+
+.main-content {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 20px;
+    padding: 15px 25px;
+    font-size: 1em;
+    background-color: white;
+    color: #2f80ed;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffd700;
+    color: black;
+}

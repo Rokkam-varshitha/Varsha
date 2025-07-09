@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Appointments Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Appointment Summary for Doctor</h2>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
+            <div style="background-color: #004080; color: white; padding: 20px; border-radius: 10px; width: 200px; text-align: center;">
+                <h3>{{ total }}</h3>
+                <p>Total Appointments</p>
+            </div>
+
+            <div style="background-color: #006600; color: white; padding: 20px; border-radius: 10px; width: 200px; text-align: center;">
+                <h3>{{ completed }}</h3>
+                <p>Completed Appointments</p>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 40px;">Upcoming Appointments</h3>
+        <table border="1" style="margin-top: 20px; width: 100%; text-align: center;">
+            <tr>
+                <th>Patient</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Reason</th>
+                <th>Action</th>
+            </tr>
+            {% for appointment in appointments %}
+            <tr>
+                <td>{{ appointment.patient_username }}</td>
+                <td>{{ appointment.date }}</td>
+                <td>{{ appointment.time }}</td>
+                <td>{{ appointment.reason }}</td>
+                <td>
+                    <a href="{{ url_for('solve_appointment', appointment_id=appointment.id) }}" class="button">View & Solve</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <br><br>
+        <a href="{{ url_for('doctor_dashboard') }}" class="button">Back to Dashboard</a>
+    </div>
+</body>
+</html>

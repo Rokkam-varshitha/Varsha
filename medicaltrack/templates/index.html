@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Hospital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('{{ url_for('static', filename='2.jpg') }}') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 30px;
+            background-color: rgba(0, 0, 80, 0.8);
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .navbar h1 i {
+            margin-right: 10px;
+        }
+
+        .nav-links a {
+            color: white;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #00ffff;
+        }
+
+        .hero {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero .buttons a {
+            padding: 10px 20px;
+            background-color: white;
+            color: #007BFF;
+            border-radius: 5px;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero .buttons a:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h1><i class="fa-solid fa-hospital"></i> Tech Hospital</h1>
+        <div class="nav-links">
+            <a href="{{ url_for('index') }}"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="{{ url_for('login') }}"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+            <a href="{{ url_for('signup') }}"><i class="fa-solid fa-user-plus"></i> Signup</a>
+            <a href="{{ url_for('aboutus') }}"><i class="fa-solid fa-circle-info"></i> About Us</a>
+            <a href="{{ url_for('contactus') }}"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+            <a href="{{ url_for('profile') }}"><i class="fa-solid fa-user"></i> Profile</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h2>WELCOME TO TECH HOSPITAL</h2>
+        <p>Providing advanced healthcare with care and technology</p>
+        <div class="buttons">
+            <a href="{{ url_for('book_appointment') }}">Book Appointment</a>
+            <a href="{{ url_for('find_doctor') }}">Find Doctor</a>
+        </div>
+    </div>
+
+</body>
+</html>

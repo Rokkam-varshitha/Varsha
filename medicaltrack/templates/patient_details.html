@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patient Details - MedTrack</title>
+  <style>
+    body {
+      background: url('https://images.unsplash.com/photo-1583912268185-1c1bcd7d5d89?auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+      padding: 40px;
+    }
+    table {
+      width: 100%;
+      margin-bottom: 30px;
+      border-collapse: collapse;
+      background: rgba(0,0,0,0.6);
+      color: white;
+    }
+    th, td {
+      padding: 12px 16px;
+      border: 1px solid #fff;
+      text-align: left;
+    }
+    th {
+      background: rgba(52, 152, 219, 0.7);
+    }
+    h1, h2 {
+      color: #fff;
+      text-shadow: 1px 1px 4px #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Patient Medical Records</h1>
+  <p>Here are your diagnosis results and prescriptions.</p>
+
+  <h2>Patient Details</h2>
+  <table>
+    <tr>
+      <th>Email</th>
+      <th>Name</th>
+      <th>History</th>
+    </tr>
+    {% for p in patients %}
+    <tr>
+      <td>{{ p.email }}</td>
+      <td>{{ p.name }}</td>
+      <td>{{ p.medical_history }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <h2>Diagnosis & Prescriptions</h2>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Diagnosis</th>
+      <th>Prescribed Medicines</th>
+    </tr>
+    {% for record in records %}
+    <tr>
+      <td>{{ record.date }}</td>
+      <td>{{ record.diagnosis }}</td>
+      <td>{{ record.medicines }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

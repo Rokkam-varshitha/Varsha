@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile - MedTrack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #e8f5e9, #ffffff);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .profile-container {
+            max-width: 800px;
+            margin: 60px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 30px;
+        }
+        .info-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #555;
+        }
+        .info-value {
+            color: #000;
+        }
+        .profile-icon {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-icon i {
+            font-size: 80px;
+            color: #4caf50;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .back-btn:hover {
+            background-color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-container">
+    <div class="profile-icon">
+        <i class="fas fa-user-circle"></i>
+    </div>
+    <h2>My Profile</h2>
+
+    {% if user %}
+        <div class="info-group">
+            <div class="info-label">Full Name:</div>
+            <div class="info-value">{{ user.username }}</div>
+        </div>
+        <div class="info-group">
+            <div class="info-label">Email:</div>
+            <div class="info-value">{{ user.email }}</div>
+        </div>
+        <div class="info-group">
+            <div class="info-label">Phone Number:</div>
+            <div class="info-value">{{ user.phone }}</div>
+        </div>
+        <div class="info-group">
+            <div class="info-label">Role:</div>
+            <div class="info-value">{{ user.role | capitalize }}</div>
+        </div>
+        <div class="info-group">
+            <div class="info-label">Joined:</div>
+            <div class="info-value">{{ user.id }}</div> <!-- You can replace this with created_at if you store it -->
+        </div>
+
+        <div style="text-align: center;">
+            <a href="{{ url_for('logout') }}" class="back-btn">Logout</a>
+        </div>
+    {% else %}
+        <p style="text-align:center;">User not found or session expired.</p>
+    {% endif %}
+</div>
+
+</body>
+</html>

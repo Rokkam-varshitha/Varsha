@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    color: black;
+    text-shadow: 2px 2px whitesmoke;
+}
+h1 {
+    margin-top: 50px;
+    font-size: 40px;
+    font-weight: bold;
+    
+}
+
+h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+   
+}
+
+form {
+    margin-bottom: 15px;
+}
+
+button {
+    background-color:rgb(95, 182, 232) ;
+    border color : black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+ 
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 255, 0.432);
+}

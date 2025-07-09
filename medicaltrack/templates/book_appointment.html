@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Book Appointment - MedTrack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body { background: #f7f7f7; font-family: Arial, sans-serif; }
+        .container { background: #fff; max-width: 500px; margin: 40px auto; padding: 30px 40px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);}
+        h2 { color: #2c3e50; margin-bottom: 20px; }
+        label { font-weight: bold; margin-top: 10px; display: block; }
+        input, textarea, select { width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; }
+        button, .button { padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; margin-top: 10px; text-decoration: none; display: inline-block; }
+        button:hover, .button:hover { background-color: #217dbb; }
+        .cancel-btn { background-color: #e74c3c; margin-left: 10px; }
+        .cancel-btn:hover { background-color: #c0392b; }
+        .flash-container { margin-bottom: 20px; }
+        .flash { padding: 12px 20px; border-radius: 6px; margin: 10px auto; font-weight: bold; font-size: 16px; text-align: center; }
+        .flash-success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .flash-danger, .flash-error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .flash-warning { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+        .flash-info { background-color: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+    </style>
+</head>
+<body>
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-container">
+          {% for category, message in messages %}
+            <div class="flash flash-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    <h2>Book Appointment</h2>
+    <form method="POST" action="{{ url_for('book_appointment') }}">
+        <label for="doctor_username">Doctor:</label>
+        <select name="doctor_username" id="doctor_username" required>
+            <option value="">Select Doctor</option>
+            {% for name in doctor_names %}
+                <option value="{{ name }}">{{ name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" required min="{{ (now().date()|string) if now else '' }}">
+
+        <label for="time">Time:</label>
+        <input type="time" name="time" id="time" required>
+
+        <label for="reason">Reason:</label>
+        <textarea name="reason" id="reason" required></textarea>
+
+        <button type="submit">Book Appointment</button>
+        <a href="{{ url_for('patient_dashboard') }}" class="button cancel-btn">Cancel</a>
+    </form>
+</div>
+</body>
+</html>

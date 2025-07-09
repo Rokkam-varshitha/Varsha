@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient History - MedTrack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Medical History for {{ patient_username }}</h2>
+    <h3>Diagnosis</h3>
+    <ul>
+        {% for diag in diagnoses %}
+        <li>{{ diag.diagnosis_text }}</li>
+        {% else %}
+        <li>No diagnosis found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Medicines</h3>
+    <ul>
+        {% for med in medicines %}
+        <li>{{ med.name }} — {{ med.dosage }} at {{ med.time }}</li>
+        {% else %}
+        <li>No medicines found.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/download_report/{{ patient_username }}" class="button">Download PDF Report</a>
+    <a href="/doctor_dashboard" class="button">Back</a>
+</div>
+</body>
+</html>
